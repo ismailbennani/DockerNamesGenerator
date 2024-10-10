@@ -17,7 +17,7 @@
             The generation algorithm is the one used by docker to generate the names of their containers, see https://github.com/moby/moby/blob/39f7b2b6d0156811d9683c6cb0743118ae516a11/pkg/namesgenerator/names-generator.go#L16.
         </Description>
         <Copyright>ismailbennani</Copyright>
-        <PackageLicenseUrl>https://github.com/ismailbennani/DockerNamesGenerator/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/ismailbennani/DockerNamesGenerator</RepositoryUrl>
         <RepositoryType>github</RepositoryType>
         <PackageTags>name, generator, docker</PackageTags>
