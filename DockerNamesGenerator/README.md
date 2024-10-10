@@ -5,41 +5,6 @@ The generation algorithm is the one used by docker to generate the names of thei
 
 ## Quick start
 
-### CLI
-
-Start by installing the CLI tool, e.g. using dotnet:
-```
-dotnet tool install --global DockerNamesGenerator.CLI
-```
-
-Then run the `docker-name` command.
-```
-> docker-name
-festive_meitner
-```
-
-<b>Features</b>
-- Provide a seed
-```
-docker-name 123
-zealous_thompson
-```
-
-<b>Usage</b>
-```
-docker-name 1.0.0
-ismailbennani
-
-  --help          Display this help screen.
-
-  --version       Display version information.
-
-  value pos. 0    Value that will be used as a seed for the random generation.
-
-```
-
-### Library
-
 Start by installing the nuget, e.g. using dotnet:
 ```
 dotnet add package DockerNamesGenerator
