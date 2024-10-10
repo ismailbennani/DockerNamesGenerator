@@ -9,14 +9,8 @@ Parser.Default.ParseArguments<Options>(args)
     .WithParsed(
         opt =>
         {
-            if (opt.Seed == null)
-            {
-                Console.WriteLine(DockerNameGenerator.GenerateDockerLikeName());
-            }
-            else
-            {
-                Console.WriteLine(DockerNameGenerator.GenerateDockerLikeName(opt.Seed));
-            }
+            string name = opt.Seed.HasValue ? DockerNameGenerator.GenerateDockerLikeName(opt.Seed.Value) : DockerNameGenerator.GenerateDockerLikeName();
+            Console.WriteLine(name);
         }
     );
 
@@ -24,5 +18,5 @@ Parser.Default.ParseArguments<Options>(args)
 class Options
 {
     [Value(0, Required = false, HelpText = "Value that will be used as a seed for the random generation.")]
-    public string? Seed { get; set; } = null;
+    public int? Seed { get; set; } = null;
 }

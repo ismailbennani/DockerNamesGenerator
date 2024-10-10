@@ -8,7 +8,7 @@ public static class DockerNameGenerator
 {
     public static string GenerateDockerLikeName() => GenerateDockerLikeName(Random.Shared);
     public static string GenerateDockerLikeName(int seed) => GenerateDockerLikeName(new Random(seed));
-    public static string GenerateDockerLikeName(object? seed) => GenerateDockerLikeName(new Random(seed?.GetHashCode() ?? 0));
+    public static string GenerateDockerLikeName(Guid seed) => GenerateDockerLikeName(new Random(Hash(seed)));
 
     public static string GenerateDockerLikeName(Random random)
     {
@@ -23,6 +23,19 @@ public static class DockerNameGenerator
 
             result = $"{adjective}_{name}";
         } while (result == "boring_wozniak"); /* Steve Wozniak is not boring */
+
+        return result;
+    }
+
+    static int Hash(Guid guid)
+    {
+        byte[] bytes = guid.ToByteArray();
+        int result = 0;
+
+        for (int i = 0; i < 4; i++)
+        {
+            result += BitConverter.ToInt32(bytes, i * 4);
+        }
 
         return result;
     }
