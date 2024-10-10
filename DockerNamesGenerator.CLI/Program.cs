@@ -9,7 +9,8 @@ Parser.Default.ParseArguments<Options>(args)
     .WithParsed(
         opt =>
         {
-            string name = opt.Seed.HasValue ? DockerNameGenerator.GenerateDockerLikeName(opt.Seed.Value) : DockerNameGenerator.GenerateDockerLikeName();
+            DockerNameGenerator generator = DockerNameGenerator.Instance;
+            string name = opt.Seed.HasValue ? generator.GenerateName(opt.Seed.Value) : generator.GenerateName();
             Console.WriteLine(name);
         }
     );
