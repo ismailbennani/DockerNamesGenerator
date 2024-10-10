@@ -2,5 +2,5 @@
 
 public interface INameGenerator
 {
-    public string GenerateName(Random random);
+    public string GenerateName();
 }

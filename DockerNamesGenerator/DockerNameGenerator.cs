@@ -8,17 +8,23 @@ namespace DockerNamesGenerator;
 
 public class DockerNameGenerator : INameGenerator
 {
-    public static readonly DockerNameGenerator Instance = new();
+    public static readonly DockerNameGenerator Instance = DockerNameGeneratorFactory.Create();
+    readonly Random _random;
 
-    public string GenerateName(Random random)
+    internal DockerNameGenerator(Random random)
+    {
+        _random = random;
+    }
+
+    public string GenerateName()
     {
         string result;
         do
         {
-            int adjectivesIndex = random.Next(Adjectives.Count);
+            int adjectivesIndex = _random.Next(Adjectives.Count);
             string adjective = Adjectives[adjectivesIndex];
 
-            int namesIndex = random.Next(Names.Count);
+            int namesIndex = _random.Next(Names.Count);
             string name = Names[namesIndex];
 
             result = $"{adjective}_{name}";
