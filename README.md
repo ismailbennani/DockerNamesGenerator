@@ -18,14 +18,14 @@ Then run the `docker-name` command.
 festive_meitner
 ```
 
-### Features
+#### Features
 - Provide a seed
 ```
 > docker-name 123
 zealous_thompson
 ```
 
-### Usage
+#### Usage
 ```
 > docker-name --help
 docker-name 1.0.0
