@@ -31,7 +31,7 @@ jobs:
       
       - name: Run
         run: |
-          result=`DockerNamesGenerator/bin/Release/net8.0/DockerNamesGenerator 123`
-          echo "> DockerNamesGenerator 123"
+          result=`DockerNamesGenerator.CLI/bin/Release/net8.0/DockerNamesGenerator.CLI 123`
+          echo "> DockerNamesGenerator.CLI 123"
           echo "$result"
           if [ "$result" != "zealous_thompson" ]; then exit 1; fi
