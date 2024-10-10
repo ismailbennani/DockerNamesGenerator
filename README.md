@@ -21,12 +21,13 @@ festive_meitner
 <b>Features</b>
 - Provide a seed
 ```
-docker-name 123
+> docker-name 123
 zealous_thompson
 ```
 
 <b>Usage</b>
 ```
+> docker-name --help
 docker-name 1.0.0
 ismailbennani
 
