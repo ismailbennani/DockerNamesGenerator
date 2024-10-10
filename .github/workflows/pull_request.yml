@@ -25,10 +25,13 @@ jobs:
 
       - name: Build
         run: dotnet build --configuration Release
+        
+      - name: Publish
+        run: dotnet publish --configuration Release
       
       - name: Run
         run: |
-          result=`DockerNamesGenerator/bin/Release/net8.0/DockerNamesGenerator.exe 123`
-          echo "> DockerNamesGenerator.exe 123"
+          result=`DockerNamesGenerator/bin/Release/net8.0/DockerNamesGenerator 123`
+          echo "> DockerNamesGenerator 123"
           echo "$result"
           if [ "$result" != "zealous_thompson" ]; then exit 1; fi
