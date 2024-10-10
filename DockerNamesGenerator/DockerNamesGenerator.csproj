@@ -6,10 +6,29 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackAsTool>true</PackAsTool>
+        <ToolCommandName>docker-name</ToolCommandName>
+        <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>DockerNamesGenerator</Title>
+        <Authors>ismailbennani</Authors>
+        <Description>Generate random names.
+            The generation algorithm is the one used by docker to generate the names of their containers, see https://github.com/moby/moby/blob/39f7b2b6d0156811d9683c6cb0743118ae516a11/pkg/namesgenerator/names-generator.go#L16.
+        </Description>
+        <Copyright>ismailbennani</Copyright>
+        <PackageLicenseUrl>https://github.com/ismailbennani/DockerNamesGenerator/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/ismailbennani/DockerNamesGenerator</RepositoryUrl>
+        <RepositoryType>github</RepositoryType>
+        <PackageTags>name, generator, docker</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="CommandLineParser" Version="2.9.1" />
+        <PackageReference Include="CommandLineParser" Version="2.9.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="/"/>
     </ItemGroup>
 
 </Project>
